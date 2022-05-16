@@ -10,8 +10,8 @@ const getApiInfo = async () => {
             return axios.get(el.url)
         })
 
-        const arrayPokes = await Promise.all(apiInfo).then((pokeArray) => {//Promise.all espera a que todas las promesas sean resultadas
-            const pokeArray = pokeArray.map((el) => {//el es el objeto que se esta iterando
+        const arrayPokes = await Promise.all(apiInfo).then((poke) => {//Promise.all espera a que todas las promesas sean resultadas
+            const pokeArray = poke.map((element) => {//el es el objeto que se esta iterando
                 return {
 
                     id: element.data.id,
@@ -37,4 +37,4 @@ const getApiInfo = async () => {
 }
 
 
-module.exports = getApiInfo();
+module.exports = getApiInfo;

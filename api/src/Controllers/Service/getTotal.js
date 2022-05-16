@@ -1,5 +1,5 @@
-const getApiInfo = require('./ApiInfo');
-const getDbInfo = require('./DbInfo');
+const getApiInfo = require('./getApiInfo');
+const getDbInfo = require('./getDbInfo');
 
 const getTotal = async () => {
     const apiInfo = await getApiInfo();

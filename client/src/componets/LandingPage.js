@@ -13,7 +13,7 @@ export default function LandingPage() {
                     <button className={style.btn}>Ingresar</button>
                 </Link>
             </div>
-        </div>
+        </div >
 
     );
 

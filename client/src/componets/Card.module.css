@@ -1,0 +1,67 @@
+.card {
+
+
+    box-shadow: 5px 2px 10px rgba(23, 19, 19, 0.87);
+    cursor: pointer;
+    width: 200px;
+    height: 300px;
+    padding: 20px 20px;
+    border: solid 1px #fffcfc;
+    border-radius: 20px;
+    transition: transform 0.1s;
+    background-image: url("https:/i.pinimg.com/564x/31/f9/3d/31f93dd0763cfbee71568000ae0c3859.jpg");
+
+    padding-bottom: 2px;
+    margin: 10px 10px 10px 10px;
+
+}
+
+.mainContainer {
+    margin-top: 100px;
+    margin-bottom: -95px;
+}
+
+
+
+/*  */
+.card:hover {
+    transform: scale(1.05);
+}
+
+.img {
+
+    width: 205px;
+    height: 160px;
+    border-radius: 20px;
+    object-fit: fill;
+    margin-top: -10px;
+
+}
+
+.linkTitle {
+
+    margin-top: -5px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: white;
+    text-decoration-line: none;
+    overflow: hidden;
+}
+
+.linkTitleLikes {
+    margin-top: 5px;
+    color: rgb(248, 237, 231);
+}
+
+.linkTitleDiets {
+    position: relative;
+    top: -10px;
+    color: white;
+
+}
+
+
+.linkTitle:hover {
+    transform: scale(1.2);
+
+}

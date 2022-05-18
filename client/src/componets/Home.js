@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getPokemons } from '../redux/actions'
 import { Link } from 'react-router-dom'
 import Card from "../componets/Card"
+import style from './Home.module.css'
+
 
 export default function Home() {
     const dispatch = useDispatch()
@@ -29,16 +31,30 @@ export default function Home() {
                     <option value="desc">Descendente</option>
                 </select>
             </div>
-            <div>
+            <div >
                 <select>
                     <option value="All">Todos </option>
                     <option value="create">Creados</option>
                     <option value="api">Existentes</option>
                 </select>
             </div>
-            {allPokemons && allPokemons.map((el) => {
-                <Card key={el.id} name={el.name} image={el.image} types={el.types} />
-            })}
+
+
+
+            <div className={style.mainCard}>
+                {
+                    allPokemons.length > 0 ? allPokemons.map(p => {
+                        return <Card key={p.id} img={p.img} name={p.name} types={p.types} />
+
+
+                    }) :
+                        <h1>No hay pokemons</h1>
+
+                }
+            </div>
+
+
+
         </div>
 
 

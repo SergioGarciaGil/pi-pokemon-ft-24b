@@ -1,0 +1,115 @@
+.container{
+
+background-image: url("https://fondosmil.com/fondo/10957.jpg");
+width: 100%;
+height: 100%;
+padding: 0
+
+}
+
+
+
+.mainCard {
+   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+   
+}
+.fixed{
+    position: fixed;
+    width: 100%;
+    
+}
+.navbar  {
+    /* float: left; */ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+    text-align: center;
+    padding: 6px 0px;
+   list-style: none;
+    background-image: url("https://i.pinimg.com/564x/31/f9/3d/31f93dd0763cfbee71568000ae0c3859.jpg");
+}
+.allRecipes {
+    height: 43px;
+    border: solid;
+    border-color: lightgray;
+    background-color: rgb(255, 130, 28);
+    color: rgb(52, 48, 48);
+    font-size: medium;
+    border-radius: 8px;
+    margin-top: 1px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.allRecipes:hover {
+    background-color: #90898910;
+    color: rgb(255, 254, 254);
+}
+.contentSelect select {
+    cursor: pointer;
+    padding: 7px 0px;
+    height: 42px;
+    font-size: 1em;
+    color: rgb(94, 94, 94);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+   
+   
+}
+
+
+
+.welcome{
+   padding-bottom: 20px;
+}
+.btnAllRecipes{
+ 
+    height: 43px;
+    border: solid;
+    border-color: lightgray;
+    background-color: rgb(255, 130, 28);
+    color: rgb(52, 48, 48);
+    font-size: medium;
+    border-radius: 8px;
+    margin-top: 1px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+
+
+.inputSearch {
+    background-color: #ffffff;
+    border-radius: 4px;
+    border-color: transparent;
+    margin: 10px;
+    width: 400px;
+
+
+}
+.btnSearch {
+    position:relative;
+    
+    left: 0px;
+    background-color: rgb(226, 220, 217);
+    border:1px solid rgb(234, 123, 13);
+    color:white;
+    font-size:auto;
+    padding: 0px;
+    text-decoration: center;
+   width: 100px;
+   height: 20px
+  
+    
+}
+.diets{
+    background-color: red;
+}
+

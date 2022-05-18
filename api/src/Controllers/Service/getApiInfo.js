@@ -5,7 +5,7 @@ const axios = require('axios');
 const getApiInfo = async () => {
 
     try {
-        const callingApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=70")
+        const callingApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=40")
         const apiInfo = callingApi.data.results.map((el) => {
             return axios.get(el.url)
         })

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getPokemons } from '../redux/actions'
 import { Link } from 'react-router-dom'
 import Card from "../componets/Card"
+import SearchBar from "../componets/SearchBar"
 import style from './Home.module.css'
 
 
@@ -36,12 +37,16 @@ export default function Home() {
                                 <option value="desc">Descendente</option>
                             </select>
                         </div>
+
                         <div className={style.contentSelect}>
                             <select>
                                 <option value="All">Todos </option>
                                 <option value="create">Creados</option>
                                 <option value="api">Existentes</option>
                             </select>
+                        </div>
+                        <div>
+                            <SearchBar />
                         </div>
 
                     </div>

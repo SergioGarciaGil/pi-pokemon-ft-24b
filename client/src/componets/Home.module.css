@@ -37,11 +37,10 @@ padding: 0
 }
 .allPokemons {
     height: 43px;
-    border: solid;
-    border-color: lightgray;
-    background-color: rgba(248, 216, 36, 0.733);
+    background-color: rgba(248, 216, 36, 0.836);
     color: rgb(27, 19, 19);
     font-size: medium;
+    border: 3px solid rgba(15, 15, 15, 0.596);
     border-radius: 8px;
     margin-top: 1px;
     margin-right: 3px;

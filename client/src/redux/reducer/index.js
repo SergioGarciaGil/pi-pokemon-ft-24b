@@ -1,4 +1,4 @@
-import { GET_POKEMONS } from '../actions/types';
+import { GET_NAME_POKEMON, GET_POKEMONS } from '../actions/types';
 
 
 const initialState = {
@@ -8,6 +8,11 @@ const initialState = {
 function rootReducer(state = initialState, action) {
     switch (action.type) {
         case GET_POKEMONS:
+            return {
+                ...state,
+                pokemons: action.payload
+            }
+        case GET_NAME_POKEMON:
             return {
                 ...state,
                 pokemons: action.payload

@@ -4,12 +4,12 @@
     box-shadow: 5px 2px 10px rgba(23, 19, 19, 0.87);
     cursor: pointer;
     width: 200px;
-    height: 300px;
+    height: 280px;
     padding: 20px 20px;
     border: solid 1px #fffcfc;
     border-radius: 20px;
     transition: transform 0.1s;
-    background-image: url("https:/i.pinimg.com/564x/31/f9/3d/31f93dd0763cfbee71568000ae0c3859.jpg");
+    background-image: url("https://st2.depositphotos.com/38951590/42199/v/450/depositphotos_421993904-stock-illustration-sound-waves-oscillating-dark-blue.jpg");
 
     padding-bottom: 2px;
     margin: 10px 10px 10px 10px;
@@ -46,21 +46,23 @@
     color: white;
     text-decoration-line: none;
     overflow: hidden;
-}
-
-.linkTitleLikes {
-    margin-top: 5px;
-    color: rgb(248, 237, 231);
-}
-
-.linkTitleDiets {
-    position: relative;
-    top: -10px;
-    color: white;
-
+    letter-spacing: 2px;
 }
 
 
+
+.linkTitleTypes {
+    text-transform: capitalize;
+    display: inline-block;
+    margin-top: 2px;
+    letter-spacing:2px;
+    text-indent: 20px;
+    color: rgb(61, 59, 59);
+    font-size: 18px;
+   
+
+
+}
 .linkTitle:hover {
     transform: scale(1.2);
 

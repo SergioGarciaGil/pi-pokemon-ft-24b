@@ -12,9 +12,9 @@ export default function Card({ img, name, types }) {
 
                 <img className={style.img} src={img} alt="PokeImage not found" width="175px" height="160px" />
 
-                <h5>
+                <h5 >
                     {types && types.map((type, index) => (
-                        <h5 key={index} value={type.name} className={style.linkTitleDiets} >{type.name}</h5>
+                        <h5 key={index} value={type.name} className={style.linkTitleTypes} >{type.name}</h5>
                     ))}
                 </h5>
                 <br />

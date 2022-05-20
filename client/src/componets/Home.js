@@ -22,39 +22,42 @@ export default function Home() {
 
     return (
         <div>
-            <Link to="/pokemons"> Crear personaje</Link>
-            <h1>Pagina Pokemons</h1>
-            <button onClick={(e) => handleClick(e)}> Volver a cargar los Pokemons </button>
-            <div>
-                <select>
-                    <option value="asc">Ascendente</option>
-                    <option value="desc">Descendente</option>
-                </select>
+            <div className={style.container}>
+                <div>
+                    <div className={style.navbar} >
+                        <Link to="/pokemons">
+                            <button className={style.allPokemons}>Crear Pokemon</button>
+                        </Link>
+
+                        <button className={style.allPokemons} onClick={(e) => handleClick(e)}> Volver a cargar los Pokemons </button>
+                        <div className={style.contentSelect} >
+                            <select>
+                                <option value="asc">Ascendente</option>
+                                <option value="desc">Descendente</option>
+                            </select>
+                        </div>
+                        <div className={style.contentSelect}>
+                            <select>
+                                <option value="All">Todos </option>
+                                <option value="create">Creados</option>
+                                <option value="api">Existentes</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div className={style.mainCard}>
+                        {
+                            allPokemons.length > 0 ? allPokemons.map(p => {
+                                return <Card key={p.id} img={p.img} name={p.name} types={p.types} />
+
+
+                            }) :
+                                <h1>No hay pokemons</h1>
+
+                        }
+                    </div>
+                </div>
             </div>
-            <div >
-                <select>
-                    <option value="All">Todos </option>
-                    <option value="create">Creados</option>
-                    <option value="api">Existentes</option>
-                </select>
-            </div>
-
-
-
-            <div className={style.mainCard}>
-                {
-                    allPokemons.length > 0 ? allPokemons.map(p => {
-                        return <Card key={p.id} img={p.img} name={p.name} types={p.types} />
-
-
-                    }) :
-                        <h1>No hay pokemons</h1>
-
-                }
-            </div>
-
-
-
         </div>
 
 

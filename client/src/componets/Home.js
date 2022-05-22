@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {
     getPokemons,
-    orderByName
+    orderByName,
+    filterCreated,
+    getTypes
 } from '../redux/actions'
 import { Link } from 'react-router-dom'
 import Card from "../componets/Card"
@@ -15,9 +17,11 @@ import style from './Home.module.css'
 export default function Home() {
     const dispatch = useDispatch()
     const allPokemons = useSelector((state) => state.pokemons)
+    const allTypes = useSelector((state) => state.types)
+
 
     const [currentPage, setCurrentPage] = useState(1); //creamos un stado local para setear la paginacion o pagina actual
-    const [pokemonsPerPage,] = useState(12); //creamos un stado local para setear la cantidad de pokemons por pagina
+    const [pokemonsPerPage,] = useState(8); //creamos un stado local para setear la cantidad de pokemons por pagina
     const indexOfLastPokemon = currentPage * pokemonsPerPage; //mis pokemons por pagina
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; //aqui restamos la cantidad de pokemons por pagina y me da 0
 
@@ -32,6 +36,7 @@ export default function Home() {
 
     useEffect(() => {
         dispatch(getPokemons())
+        dispatch(getTypes())
     }, [dispatch])
 
     function handleClick(e) {
@@ -44,6 +49,12 @@ export default function Home() {
         dispatch(orderByName(e.target.value))
         setCurrentPage(1)
         setOrder(`ordenado ${e.target.value}`)
+    }
+
+    function handleFilterCreated(e) {
+        e.preventDefault()
+        dispatch(filterCreated(e.target.value))
+        setCurrentPage(1)
     }
 
     return (
@@ -65,16 +76,24 @@ export default function Home() {
                         </div>
                         <div className={style.contentSelect} >
                             <select>
-                                <option value="asc">Ascendente</option>
-                                <option value="desc">Descendente</option>
+                                <option value="types">Types</option>
+
+                                {allTypes.sort((a, b) => a.name.localeCompare(b.name))//ordenamos los tipos
+                                    .map((type) => (//mapamos los tipos
+                                        <option key={type.id} value={type.name}>{type.name}</option>))}
+
+
+
+
                             </select>
                         </div>
 
                         <div className={style.contentSelect}>
-                            <select>
-                                <option value="All">Todos </option>
-                                <option value="create">Creados</option>
-                                <option value="api">Existentes</option>
+                            <select onChange={(e) => handleFilterCreated(e)}>
+                                <option value="" hidden>Filtrar creados </option>
+                                <option value="all">Todos </option>
+                                <option value="created">Creados</option>
+
                             </select>
                         </div>
                         <div>
@@ -85,11 +104,12 @@ export default function Home() {
                     </div>
                     <div className={style.mainCard}>
                         {
-                            currentPokemons.map(p => {
+                            currentPokemons.length > 0 ? currentPokemons.map(p => {
                                 return <Card key={p.id} img={p.img} name={p.name} types={p.types} />
 
 
-                            })
+                            }) :
+                                <h1>No hay pokemons</h1>
 
                         }
                     </div>
@@ -99,6 +119,7 @@ export default function Home() {
                         allPokemons={allPokemons.length}
                         paginado={paginado}
                     />
+
 
                 </div>
             </div>

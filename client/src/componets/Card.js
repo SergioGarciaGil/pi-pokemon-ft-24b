@@ -10,7 +10,7 @@ export default function Card({ img, name, types }) {
                 <h4 className={style.linkTitle}> {name.charAt(0).toUpperCase() +
                     name.slice(1)}</h4>
 
-                <img className={style.img} src={img} alt="PokeImage not found" width="175px" height="160px" />
+                <img className={style.img} src={img} alt={`${name}`} width="175px" height="160px" />
 
                 <h5>
                     {types && types.map((type, index) => (

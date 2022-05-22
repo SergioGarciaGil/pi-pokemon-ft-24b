@@ -1,5 +1,11 @@
 import axios from 'axios';
-import { GET_POKEMONS, GET_NAME_POKEMON, ORDER_BY_NAME } from './types';
+import {
+    GET_POKEMONS,
+    GET_NAME_POKEMON,
+    ORDER_BY_NAME,
+    FILTER_CREATED,
+    GET_TYPES
+} from './types';
 
 export function getPokemons() {
     return async (dispatch) => {
@@ -26,4 +32,24 @@ export function orderByName(payload) {
         type: ORDER_BY_NAME,
         payload
     }
+}
+
+export function filterCreated(payload) {
+    return {
+        type: FILTER_CREATED,
+        payload
+
+    }
+}
+
+export function getTypes() {
+    return async (dispatch) => {
+        const json = await axios.get("http://localhost:3001/types")
+        return dispatch({
+            type: GET_TYPES,
+            payload: json.data
+        })
+    }
+
+
 }

@@ -1,3 +1,5 @@
 export const GET_POKEMONS = 'GET_POKEMONS';
 export const GET_NAME_POKEMON = 'GET_NAME_POKEMON';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
+export const FILTER_CREATED = 'FILTER_CREATED';
+export const GET_TYPES = 'GET_TYPES';

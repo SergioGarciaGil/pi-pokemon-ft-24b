@@ -4,7 +4,9 @@ import {
     GET_NAME_POKEMON,
     ORDER_BY_NAME,
     FILTER_CREATED,
-    GET_TYPES
+    GET_TYPES,
+    FILTER_BY_TYPES,
+    ORDER_BY_ATTACK
 } from './types';
 
 export function getPokemons() {
@@ -50,6 +52,18 @@ export function getTypes() {
             payload: json.data
         })
     }
+}
 
-
+export function filterByTypes(payload) {
+    console.log(payload)
+    return {
+        type: FILTER_BY_TYPES,
+        payload
+    }
+}
+export function orderByAttack(payload) {
+    return {
+        type: ORDER_BY_ATTACK,
+        payload
+    }
 }

@@ -2,14 +2,18 @@ import {
     GET_NAME_POKEMON,
     GET_POKEMONS,
     ORDER_BY_NAME,
-    FILTER_CREATED
+    FILTER_CREATED,
+    FILTER_BY_TYPES,
+    GET_TYPES,
+    ORDER_BY_ATTACK
+
 } from '../actions/types';
 
 
 const initialState = {
     pokemons: [],
     filterPokemons: [],
-    types: [],
+    pokeTypes: [],
 }
 
 function rootReducer(state = initialState, action) {
@@ -48,10 +52,28 @@ function rootReducer(state = initialState, action) {
                 pokemons: action.payload === "all" ? allPokemonsCreated : createdFilter,
 
             };
-        case 'GET_TYPES':
+        case GET_TYPES:
             return {
                 ...state,
-                types: action.payload
+                pokeTypes: action.payload
+            }
+        case FILTER_BY_TYPES:
+            const allPokes = state.filterPokemons;
+            const typeFiltered = action.payload === "all" ? allPokes :
+                allPokes.filter((e) => e.types.map((e) => e.name).includes(action.payload))
+            return {
+                ...state,
+                pokemons: typeFiltered
+            }
+        case ORDER_BY_ATTACK:
+            const allPokemonsAttack = state.pokemons
+            const orderAttack =
+                action.payload === "desc"
+                    ? allPokemonsAttack.sort((a, b) => (a.attack > b.attack) ? 1 : -1)
+                    : allPokemonsAttack.sort((a, b) => (a.attack < b.attack) ? 1 : -1)
+            return {
+                ...state,
+                pokemons: orderAttack
             }
 
 

@@ -5,7 +5,9 @@ import {
     getPokemons,
     orderByName,
     filterCreated,
-    getTypes
+    getTypes,
+    filterByTypes,
+    orderByAttack
 } from '../redux/actions'
 import { Link } from 'react-router-dom'
 import Card from "../componets/Card"
@@ -17,7 +19,7 @@ import style from './Home.module.css'
 export default function Home() {
     const dispatch = useDispatch()
     const allPokemons = useSelector((state) => state.pokemons)
-    const allTypes = useSelector((state) => state.types)
+    const allTypes = useSelector((state) => state.pokeTypes)
 
 
     const [currentPage, setCurrentPage] = useState(1); //creamos un stado local para setear la paginacion o pagina actual
@@ -57,6 +59,17 @@ export default function Home() {
         setCurrentPage(1)
     }
 
+    function handleFilterType(e) {
+        e.preventDefault();
+        dispatch(filterByTypes(e.target.value))
+    }
+    const [, setAttack] = useState('')
+    function handleOrderByAttack(e) {
+        e.preventDefault()
+        dispatch(orderByAttack(e.target.value))
+        setCurrentPage(1)
+        setAttack(`ordenado ${e.target.value}`)
+    }
     return (
         <div>
             <div className={style.container}>
@@ -73,19 +86,24 @@ export default function Home() {
                                 <option value="asc" >Ascendente</option>
                                 <option value="desc">Descendente</option>
                             </select>
+                            <div>
+                                <select onClick={(e) => handleOrderByAttack(e)}>
+                                    <option>Ordenar por Ataque</option>
+                                    <option value="asc"> Ascendente</option>
+                                    <option value="desc"> Descendente</option>
+                                </select>
+                            </div>
                         </div>
                         <div className={style.contentSelect} >
-                            <select>
-                                <option value="types">Types</option>
-
-                                {allTypes.sort((a, b) => a.name.localeCompare(b.name))//ordenamos los tipos
-                                    .map((type) => (//mapamos los tipos
-                                        <option key={type.id} value={type.name}>{type.name}</option>))}
-
-
-
-
+                            <select className='filterType' onChange={e => handleFilterType(e)}>
+                                <option value="all">Type Filter...</option>
+                                {
+                                    allTypes?.map(pt => {
+                                        return <option value={pt.name} key={pt.id}>{pt.name}</option>
+                                    })
+                                }
                             </select>
+
                         </div>
 
                         <div className={style.contentSelect}>

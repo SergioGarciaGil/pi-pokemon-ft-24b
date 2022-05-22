@@ -1,7 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getPokemons } from '../redux/actions'
+import {
+    getPokemons,
+    orderByName
+} from '../redux/actions'
 import { Link } from 'react-router-dom'
 import Card from "../componets/Card"
 import SearchBar from "../componets/SearchBar"
@@ -20,6 +23,12 @@ export default function Home() {
         e.preventDefault()
         dispatch(getPokemons())
     }
+    const [, setOrder] = useState('')
+    function handleOrderByName(e) {
+        e.preventDefault()
+        dispatch(orderByName(e.target.value))
+        setOrder(`ordenado ${e.target.value}`)
+    }
 
     return (
         <div>
@@ -30,7 +39,14 @@ export default function Home() {
                             <button className={style.allPokemons}>Crear Pokemon</button>
                         </Link>
 
-                        <button className={style.allPokemons} onClick={(e) => handleClick(e)}> Volver a cargar los Pokemons </button>
+                        <button className={style.allPokemons} onClick={(e) => handleClick(e)}> Volver a cargar los Pokemons </button>7
+                        <div className={style.contentSelect}>
+                            <select onClick={(e) => handleOrderByName(e)}>
+                                <option value="">Ordenar de la A - Z</option>
+                                <option value="asc" >Ascendente</option>
+                                <option value="desc">Descendente</option>
+                            </select>
+                        </div>
                         <div className={style.contentSelect} >
                             <select>
                                 <option value="asc">Ascendente</option>

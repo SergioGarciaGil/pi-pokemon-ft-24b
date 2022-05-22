@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_POKEMONS, GET_NAME_POKEMON } from './types';
+import { GET_POKEMONS, GET_NAME_POKEMON, ORDER_BY_NAME } from './types';
 
 export function getPokemons() {
     return async (dispatch) => {
@@ -18,5 +18,12 @@ export function getNamePokemon(name) {
             type: GET_NAME_POKEMON,
             payload: pokemon.data
         })
+    }
+}
+
+export function orderByName(payload) {
+    return {
+        type: ORDER_BY_NAME,
+        payload
     }
 }

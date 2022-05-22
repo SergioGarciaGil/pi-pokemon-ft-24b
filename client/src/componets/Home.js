@@ -8,12 +8,27 @@ import {
 import { Link } from 'react-router-dom'
 import Card from "../componets/Card"
 import SearchBar from "../componets/SearchBar"
+import Paginado from "../componets/Paginado"
 import style from './Home.module.css'
 
 
 export default function Home() {
     const dispatch = useDispatch()
     const allPokemons = useSelector((state) => state.pokemons)
+
+    const [currentPage, setCurrentPage] = useState(1); //creamos un stado local para setear la paginacion o pagina actual
+    const [pokemonsPerPage,] = useState(12); //creamos un stado local para setear la cantidad de pokemons por pagina
+    const indexOfLastPokemon = currentPage * pokemonsPerPage; //mis pokemons por pagina
+    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; //aqui restamos la cantidad de pokemons por pagina y me da 0
+
+
+    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon)// creamos un estado local para setear los pokemons de la pagina actual
+
+    const paginado = (pageNumber) => {
+        // me ayuda al renderizado del paginado
+        setCurrentPage(pageNumber);
+    };
+
 
     useEffect(() => {
         dispatch(getPokemons())
@@ -27,6 +42,7 @@ export default function Home() {
     function handleOrderByName(e) {
         e.preventDefault()
         dispatch(orderByName(e.target.value))
+        setCurrentPage(1)
         setOrder(`ordenado ${e.target.value}`)
     }
 
@@ -42,7 +58,7 @@ export default function Home() {
                         <button className={style.allPokemons} onClick={(e) => handleClick(e)}> Volver a cargar los Pokemons </button>7
                         <div className={style.contentSelect}>
                             <select onClick={(e) => handleOrderByName(e)}>
-                                <option value="">Ordenar de la A - Z</option>
+                                <option >Ordenar de la A - Z</option>
                                 <option value="asc" >Ascendente</option>
                                 <option value="desc">Descendente</option>
                             </select>
@@ -65,18 +81,25 @@ export default function Home() {
                             <SearchBar />
                         </div>
 
+
                     </div>
                     <div className={style.mainCard}>
                         {
-                            allPokemons.length > 0 ? allPokemons.map(p => {
+                            currentPokemons.map(p => {
                                 return <Card key={p.id} img={p.img} name={p.name} types={p.types} />
 
 
-                            }) :
-                                <h1>No hay pokemons</h1>
+                            })
 
                         }
                     </div>
+
+                    <Paginado
+                        pokemonsPerPage={pokemonsPerPage}
+                        allPokemons={allPokemons.length}
+                        paginado={paginado}
+                    />
+
                 </div>
             </div>
         </div>

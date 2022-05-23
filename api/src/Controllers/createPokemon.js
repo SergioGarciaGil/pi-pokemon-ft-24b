@@ -28,6 +28,7 @@ const createPokemon = async (req, res) => {
         where: { name: types }
     })
     newPokemon.addTypes(typeDb);// agrega la dieta a la base de datos
+
     res.send("Pokemon creado");
 }
 

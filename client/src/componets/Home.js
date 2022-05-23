@@ -9,11 +9,12 @@ import {
     filterByTypes,
     orderByAttack
 } from '../redux/actions'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Card from "../componets/Card"
 import SearchBar from "../componets/SearchBar"
 import Paginado from "../componets/Paginado"
 import style from './Home.module.css'
+import LinkTitle from "./Card.module.css";
 
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
         setCurrentPage(pageNumber);
     };
 
+    const nav = useNavigate();
 
     useEffect(() => {
         dispatch(getPokemons())
@@ -96,7 +98,7 @@ export default function Home() {
                         </div>
                         <div className={style.contentSelect} >
                             <select className='filterType' onChange={e => handleFilterType(e)}>
-                                <option value="all">Type Filter...</option>
+                                <option key={0} value="all">Type Filter...</option>
                                 {
                                     allTypes?.map(pt => {
                                         return <option value={pt.name} key={pt.id}>{pt.name}</option>
@@ -123,9 +125,14 @@ export default function Home() {
                     <div className={style.mainCard}>
                         {
                             currentPokemons.length > 0 ? currentPokemons.map(p => {
-                                return <Card key={p.id} img={p.img} name={p.name} types={p.types} />
 
-
+                                return (
+                                    <div key={p.id}>
+                                        <Link to={"/detail/" + p.id} className={LinkTitle.linkTitle}>
+                                            <Card key={p.id} img={p.img} name={p.name} types={p.types} />
+                                        </Link>
+                                    </div>
+                                )
                             }) :
                                 <h1>No hay pokemons</h1>
 

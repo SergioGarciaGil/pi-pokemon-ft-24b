@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from './componets/LandingPage';
 import Home from './componets/Home';
+import Detail from './componets/Detail';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<LandingPage />} />
+        <Route exact path="/detail/:id" element={<Detail />} />
         <Route exact path="/home" element={<Home />} />
       </Routes>
     </BrowserRouter>

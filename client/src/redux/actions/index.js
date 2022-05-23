@@ -6,7 +6,8 @@ import {
     FILTER_CREATED,
     GET_TYPES,
     FILTER_BY_TYPES,
-    ORDER_BY_ATTACK
+    ORDER_BY_ATTACK,
+    GET_DETAIL
 } from './types';
 
 export function getPokemons() {
@@ -65,5 +66,16 @@ export function orderByAttack(payload) {
     return {
         type: ORDER_BY_ATTACK,
         payload
+    }
+}
+
+export function getDetail(id) {
+    return async function (dispatch) {
+        const json = await axios.get(`http://localhost:3001/pokemons/${id}`)
+        return dispatch({
+            type: GET_DETAIL,
+            payload: json.data
+        })
+
     }
 }

@@ -1,0 +1,81 @@
+.containerPrincipal {
+    padding:10px;;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    background-image: url("https://imagenes.diariodenavarra.es/files/bajacalidad/uploads/2020/07/28/60b0502f2c019.jpeg");
+    /* filter: brightness(50%);  */
+    /* background-size: cover; */
+    
+    border:5px solid #0c0b0b;; 
+    width: 95%;
+    height: 600px;
+
+}
+.img {
+filter: brightness(120%);
+    position: relative;
+    top: 10px;
+    left: 320px; 
+    pointer-events: none;
+    /* box-shadow: 0px 0px 10px rgb(0, 0, 0); */
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    /* border-radius: 50px; */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 350px;
+    
+    
+}
+.titleDetail {
+        text-transform: capitalize;
+        margin-bottom: 15px;
+        color: rgb(243, 34, 166);
+        font-size: 40px;
+        width: 50%;
+        box-shadow: 0px 0px 10px rgb(216, 211, 211);
+        border-radius: 20px;
+        padding: 10PX;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+}
+.titleText{
+ position: relative;
+ top: -120px;
+    
+    text-transform: capitalize;
+    color: white;
+    text-indent: 20px;
+       
+}
+.titleTypes{
+    position: relative;
+    top:20px;
+    left: 400px;
+    display: inline-block;
+    text-indent: 20px;
+}
+
+.puntuacion{
+    position: relative;
+    bottom: 250px;
+    color: red;
+}
+.btnVolver{
+position: relative;
+    left: 530px;
+    width: 100px;
+    height: 20px;
+    background-color: rgb(243, 34, 166);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 10px;
+    
+}
+

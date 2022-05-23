@@ -5,7 +5,8 @@ import {
     FILTER_CREATED,
     FILTER_BY_TYPES,
     GET_TYPES,
-    ORDER_BY_ATTACK
+    ORDER_BY_ATTACK,
+    GET_DETAIL
 
 } from '../actions/types';
 
@@ -14,6 +15,7 @@ const initialState = {
     pokemons: [],
     filterPokemons: [],
     pokeTypes: [],
+    detail: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -75,6 +77,11 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 pokemons: orderAttack
             }
+        case GET_DETAIL:
+            return {
+                ...state,
+                detail: action.payload,
+            };
 
 
         default:

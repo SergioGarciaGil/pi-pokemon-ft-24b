@@ -40,7 +40,7 @@
 
 .linkTitle {
 
-    margin-top: -5px;
+    margin-top: 10px;
     padding-bottom: 10px;
     text-align: center;
     color: white;
@@ -52,11 +52,14 @@
 
 
 .linkTitleTypes {
+    position: relative;
+    right: 5px;
     text-transform: capitalize;
     display: inline-block;
+    height: 0px;
     margin-top: 2px;
     letter-spacing:2px;
-    text-indent: 20px;
+    text-indent: 18px;
     color: rgb(61, 59, 59);
     font-size: 18px;
    

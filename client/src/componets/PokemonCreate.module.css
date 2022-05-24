@@ -1,24 +1,32 @@
+.container{
+    background-image: url("https://fondosmil.com/fondo/14707.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+   
+   
+}
 .todo {
   position: relative;
   border: 2px solid rgb(145, 136, 136);
   border-radius: 20px;
   padding: 20px;
   top: 10px;
-  left: 25%;
+  left: 5%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 40%;
-  height: 20%;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE1kO5VsRYB3ZqdeRUykkoP0d1OgL24cGG2Q&usqp=CAU");
+  height: 18%;
+  background-image: url("https://st2.depositphotos.com/38951590/42199/v/450/depositphotos_421993904-stock-illustration-sound-waves-oscillating-dark-blue.jpg");
 
 }
 
 .textCreate {
 
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(53, 57, 57);
+  color: white;
   font-size: 30px;
   position: relative;
   top:5px;
@@ -33,10 +41,15 @@
 
 .label {
   
-  color: black;
+  color: white;
   font-size: medium;
   margin: 20px
 }
+.labelAttack{
+  color: black;
+    font-size: medium;
+    margin: 20px
+  }
 
 .input {
   position: relative;
@@ -89,4 +102,37 @@
   position: relative;
   top: -10px;
   left: -10px;
+}
+.btnVolver{
+  color: rgb(252, 244, 244);
+}
+.option1{
+  color: white
+}
+.textDelete{
+  
+
+ 
+  text-transform: capitalize;
+  display: inline-block;
+  height: -0px;
+
+  text-indent: 20px;
+  color: black;
+  
+}
+.btnCreate{
+  position: relative;
+  left: 150px;
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  font-size: 15px;
+  padding: 5px;
+  text-decoration: center;
+  width: 200px;
+  height: 30px
+}
+.btnCreate:hover{
+  transform: scale(1.2);
 }

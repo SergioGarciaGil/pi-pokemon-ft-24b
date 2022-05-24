@@ -134,7 +134,7 @@ export default function Home() {
                                     </div>
                                 )
                             }) :
-                                <h1>No hay pokemons</h1>
+                                <h1 c>No hay pokemons</h1>
 
                         }
                     </div>

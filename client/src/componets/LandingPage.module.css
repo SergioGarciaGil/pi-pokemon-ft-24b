@@ -3,7 +3,7 @@
     right: -5px;
     width: 100%;
     height: 100%;
-    background-image: url("https://i.blogs.es/cf9825/pokemon-go/450_1000.jpg");
+    background-image: url("https://fondosmil.com/fondo/14708.jpg");
     background-repeat: no-repeat;
     background-size:calc(100% - 10px);
 
@@ -12,10 +12,10 @@
     position: absolute;
     top:-5px;
     text-align: center;
-    width: 100%;
-    height:112px;
-    background-color: rgb(5, 5, 5);
-    color: white;
+    /* width: 100%;
+    height:112px; */
+    background-color: rgba(5, 5, 5, 0.141);
+    color: rgb(255, 206, 254);
     border: 5px solid black;
     padding: 20px;
     border-radius: 10px;
@@ -36,6 +36,7 @@ align-items: center;
 
 .btn {
 position: relative;
+right: 300PX;
 top: 135px;
 background-color: rgb(255, 106, 19);
 border: 0 solid #E5E7EB;

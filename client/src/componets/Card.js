@@ -12,7 +12,7 @@ export default function Card({ img, name, types }) {
 
                 <img className={style.img} src={img} alt={`${name}`} width="175px" height="160px" />
 
-                <h5>
+                <h5 className={style.linkTitle}>
                     {types && types.map((type, index) => (
                         <p key={index} value={type.name} className={style.linkTitleTypes} >{type.name}</p>
                     ))}

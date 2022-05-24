@@ -14,12 +14,12 @@ const { Pokemon, Type } = require("../../db")
 //     return poke;
 
 // };
-const getDbInfo = async (id) => {
+const getDbInfo = async () => {
     //trae la informacion de la base de datos
-    return await Pokemon.findAll(id, {
+    return await Pokemon.findAll({
         include: {
             model: Type,
-            atributes: ["name"],
+            attributes: ["name"],
             through: {
                 attributes: [],
             },

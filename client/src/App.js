@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from './componets/LandingPage';
 import Home from './componets/Home';
 import Detail from './componets/Detail';
+import PokemonCreate from './componets/PokemonCreate';
 
 
 function App() {
@@ -12,7 +13,9 @@ function App() {
 
         <Route path="/" element={<LandingPage />} />
         <Route exact path="/detail/:id" element={<Detail />} />
+        <Route path="/create" element={<PokemonCreate />} />
         <Route exact path="/home" element={<Home />} />
+
       </Routes>
     </BrowserRouter>
   );

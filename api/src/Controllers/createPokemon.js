@@ -27,7 +27,7 @@ const createPokemon = async (req, res) => {
     const typeDb = await Type.findAll({// dentro de la base de datos busca todos los tipos
         where: { name: types }
     })
-    newPokemon.addTypes(typeDb);// agrega la dieta a la base de datos
+    await newPokemon.addTypes(typeDb);// agrega la dieta a la base de datos
 
     res.send("Pokemon creado");
 }

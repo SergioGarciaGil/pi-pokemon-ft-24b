@@ -6,3 +6,4 @@ export const GET_TYPES = 'GET_TYPES';
 export const FILTER_BY_TYPES = 'FILTER_BY_TYPES';
 export const ORDER_BY_ATTACK = 'ORDER_BY_ATTACK';
 export const GET_DETAIL = 'GET_DETAIL';
+export const POST_POKEMON = 'POST_POKEMON';

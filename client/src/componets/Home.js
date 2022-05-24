@@ -77,11 +77,11 @@ export default function Home() {
             <div className={style.container}>
                 <div>
                     <div className={style.navbar} >
-                        <Link to="/pokemons">
+                        <Link to="/create">
                             <button className={style.allPokemons}>Crear Pokemon</button>
                         </Link>
 
-                        <button className={style.allPokemons} onClick={(e) => handleClick(e)}> Volver a cargar los Pokemons </button>7
+                        <button className={style.allPokemons} onClick={(e) => handleClick(e)}> Volver a cargar los Pokemons </button>
                         <div className={style.contentSelect}>
                             <select onClick={(e) => handleOrderByName(e)}>
                                 <option >Ordenar de la A - Z</option>

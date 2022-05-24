@@ -1,0 +1,92 @@
+.todo {
+  position: relative;
+  border: 2px solid rgb(145, 136, 136);
+  border-radius: 20px;
+  padding: 20px;
+  top: 10px;
+  left: 25%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  height: 20%;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE1kO5VsRYB3ZqdeRUykkoP0d1OgL24cGG2Q&usqp=CAU");
+
+}
+
+.textCreate {
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(53, 57, 57);
+  font-size: 30px;
+  position: relative;
+  top:5px;
+  bottom: 40px;
+  left: 90px;
+
+
+
+}
+
+
+
+.label {
+  
+  color: black;
+  font-size: medium;
+  margin: 20px
+}
+
+.input {
+  position: relative;
+  left: 25px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border-color: transparent;
+  margin: 10px;
+  width: 400px;
+  
+
+
+}
+
+
+.temperaments {
+  position: relative;
+  left: 90px;
+  background-color: rgb(255, 106, 19);
+  border: 2px solid rgb(10, 9, 8);
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+  text-decoration: center;
+  width: 200px;
+  height: 30px
+}
+
+.containtAtributtes {
+  position: relative;
+  left: 90px;
+  background-color: rgb(255, 106, 19);
+  border: 2px solid rgb(10, 9, 8);
+  color: rgb(15, 14, 14);
+  font-size: 18px;
+  padding: 5px;
+  text-decoration: center;
+  width: 200px;
+  height: 30px
+}
+.typesDelete{
+  display: flex;
+  flex-direction:row; 
+}
+.error{
+  position: relative;
+  left: 90px;
+  color: red;
+  font-size: 12px;
+  position: relative;
+  top: -10px;
+  left: -10px;
+}

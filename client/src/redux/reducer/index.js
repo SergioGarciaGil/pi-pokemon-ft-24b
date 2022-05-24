@@ -6,7 +6,8 @@ import {
     FILTER_BY_TYPES,
     GET_TYPES,
     ORDER_BY_ATTACK,
-    GET_DETAIL
+    GET_DETAIL,
+    POST_POKEMON
 
 } from '../actions/types';
 
@@ -82,7 +83,11 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 detail: action.payload,
             };
+        case POST_POKEMON:
+            return {
+                ...state,
 
+            }
 
         default:
             return state;

@@ -7,7 +7,8 @@ import {
     GET_TYPES,
     FILTER_BY_TYPES,
     ORDER_BY_ATTACK,
-    GET_DETAIL
+    GET_DETAIL,
+    POST_POKEMON
 } from './types';
 
 export function getPokemons() {
@@ -76,6 +77,13 @@ export function getDetail(id) {
             type: GET_DETAIL,
             payload: json.data
         })
+
+    }
+}
+export function postPokemon(payload) {
+    return async function (dispatch) {
+        const json = await axios.post("http://localhost:3001/pokemons/create", payload)
+        return json
 
     }
 }

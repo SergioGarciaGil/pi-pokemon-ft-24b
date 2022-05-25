@@ -8,7 +8,7 @@ import {
     FILTER_BY_TYPES,
     ORDER_BY_ATTACK,
     GET_DETAIL,
-    POST_POKEMON
+
 } from './types';
 
 export function getPokemons() {
@@ -87,3 +87,5 @@ export function postPokemon(payload) {
 
     }
 }
+
+

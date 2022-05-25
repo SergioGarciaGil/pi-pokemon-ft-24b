@@ -70,3 +70,11 @@
     transform: scale(1.2);
 
 }
+.attack{
+    
+    position:relative;
+    bottom: 105%;
+    left: 70px;
+    
+    color:rgb(120, 252, 120)
+}

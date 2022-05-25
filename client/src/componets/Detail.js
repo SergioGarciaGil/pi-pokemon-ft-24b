@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import style from './Detail.module.css'
 import { getDetail } from '../redux/actions'
-import styles from './Card.module.css'
+
 
 
 export default function Detail(props) {
@@ -19,6 +19,9 @@ export default function Detail(props) {
     useEffect(() => {
         dispatch(getDetail(id))
     }, [dispatch, id])
+
+
+
     return (
         <div className={style.containerPrincipal}>
             <div>
@@ -26,6 +29,7 @@ export default function Detail(props) {
                     <Link to="/home" className={style.link}>
                         <button className={style.btnVolver}>Volver</button>
                     </Link>
+
                     {detailPokemons.length === 0 ?
                         (
                             <p>Loading...</p>
@@ -45,42 +49,42 @@ export default function Detail(props) {
                                 <div>
 
                                     <div className={style.puntuacion}>
-                                        <h2 className={style.score}>
+                                        <div className={style.score}>
                                             <p className={style.titleText}>
                                                 Hp:  {detailPokemons[0].hp}
                                             </p>
-                                        </h2>
-                                        <h2 >
-                                            <p className={style.titleText}>
+                                        </div>
+                                        <div  >
+                                            <p className={style.titleText} >
                                                 Attack: {detailPokemons[0].attack}
                                             </p>
-                                        </h2>
-                                        <h2 >
+                                        </div>
+                                        <div >
                                             <p className={style.titleText}>
                                                 Defense: {detailPokemons[0].defense}
                                             </p>
-                                        </h2>
-                                        <h2 >
+                                        </div>
+                                        <div >
                                             <p className={style.titleText}>
                                                 speed: {detailPokemons[0].speed}
                                             </p>
-                                        </h2>
-                                        <h2 >
+                                        </div>
+                                        <div >
                                             <p className={style.titleText}>
                                                 height: {detailPokemons[0].height}
                                             </p>
-                                        </h2>
-                                        <h2 >
+                                        </div>
+                                        <div>
                                             <p className={style.titleText}>
                                                 weight: {detailPokemons[0].weight}
                                             </p>
-                                        </h2>
-                                        <h2 >
-                                            <p className={style.titleText}>
+                                        </div>
+                                        <div >
+                                            <div className={style.titleText}>
 
                                                 Types: {detailPokemons[0].types.map((e, index) => <p className={style.titleTypes} key={index}> {e.name + ", "}</p>)}
-                                            </p>
-                                        </h2>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 

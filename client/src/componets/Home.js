@@ -9,7 +9,7 @@ import {
     filterByTypes,
     orderByAttack
 } from '../redux/actions'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Card from "../componets/Card"
 import SearchBar from "../componets/SearchBar"
 import Paginado from "../componets/Paginado"
@@ -36,7 +36,7 @@ export default function Home() {
         setCurrentPage(pageNumber);
     };
 
-    const nav = useNavigate();
+
 
     useEffect(() => {
         dispatch(getPokemons())
@@ -90,9 +90,9 @@ export default function Home() {
                             </select>
                             <div>
                                 <select onClick={(e) => handleOrderByAttack(e)}>
-                                    <option>Ordenar por Ataque</option>
-                                    <option value="asc"> Ascendente</option>
-                                    <option value="desc"> Descendente</option>
+
+                                    <option value="asc"   >Attack Ascendente</option>
+                                    <option value="desc"> Attack Descendente</option>
                                 </select>
                             </div>
                         </div>
@@ -129,12 +129,17 @@ export default function Home() {
                                 return (
                                     <div key={p.id}>
                                         <Link to={"/detail/" + p.id} className={LinkTitle.linkTitle}>
-                                            <Card key={p.id} img={p.img} name={p.name} types={p.types} />
+                                            <Card
+                                                key={p.id}
+                                                img={p.img}
+                                                name={p.name}
+                                                attack={p.attack}
+                                                types={p.types} />
                                         </Link>
                                     </div>
                                 )
                             }) :
-                                <h1 c>No hay pokemons</h1>
+                                <h1 className={style.notFound}>No hay pokemons</h1>
 
                         }
                     </div>

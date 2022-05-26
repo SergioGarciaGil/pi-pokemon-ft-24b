@@ -95,13 +95,17 @@
   flex-direction:row; 
 }
 .error{
-  position: relative;
-  left: 90px;
+ margin-left: 50px;
+  width: 200px;
+  
+ 
   color: red;
-  font-size: 12px;
+ 
+  font-size: 15px;
   position: relative;
   top: -10px;
   left: -10px;
+  background-color: rgba(255, 229, 182, 0.288);
 }
 .btnVolver{
   color: rgb(252, 244, 244);

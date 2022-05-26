@@ -8,6 +8,30 @@ function validate(input) {
     let error = {};
     if (!input.name) {
         error.name = "El nombre es obligatorio";
+    } else if (input.name.length < 3) {
+        error.name = "El nombre debe tener al menos 3 caracteres";
+    } else if (input.name.length > 20) {
+        error.name = "El nombre debe tener menos de 20 caracteres";
+    } else if (!input.hp) {
+        error.hp = "El hp es obligatorio";
+    } else if (input.hp < 0) {
+        error.hp = "El hp debe ser mayor que 0";
+    } else if (isNaN(input.hp)) {
+        error.hp = "El hp debe ser un numero";
+    } else if (input.attack < 0) {
+        error.attack = "El ataque debe ser mayor que 0";
+    } else if (isNaN(input.attack)) {
+        error.attack = "El ataque debe ser un numero";
+    } else if (input.defense < 0) {
+        error.defense = "La defensa debe ser mayor que 0";
+    } else if (isNaN(input.defense)) {
+        error.defense = "La defensa debe ser un numero";
+    } else if (input.speed < 0) {
+        error.speed = "La velocidad debe ser mayor que 0";
+    } else if (isNaN(input.speed)) {
+        error.speed = "La velocidad debe ser un numero";
+    } else if (!input.img.includes("https://")) {
+        error.img = "debe ser una url valida";
     }
     return error;
 }

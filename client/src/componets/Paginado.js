@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Paginado.module.css";
 
-export default function Paginado({ pokemonsPerPage, allPokemons, paginado, next, previus }) {
+export default function Paginado({ pokemonsPerPage, allPokemons, paginado, next, prev }) {
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(allPokemons / pokemonsPerPage); i++) {
         //math.ceil redondea todos las recetas sobre todas las recetas que tengo por  pagina
@@ -13,7 +13,7 @@ export default function Paginado({ pokemonsPerPage, allPokemons, paginado, next,
             <nav>
 
                 <ul className={style.ul}>
-
+                    <button onClick={prev}>Prev</button>
                     {pageNumbers &&
                         pageNumbers.map((number) => (
 
@@ -22,9 +22,11 @@ export default function Paginado({ pokemonsPerPage, allPokemons, paginado, next,
                             </li>
 
                         ))}
+                    <button onClick={next}> Next</button>
                 </ul>
+
             </nav>
-        </div>
+        </div >
     );
 }
 

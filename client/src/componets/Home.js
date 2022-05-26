@@ -74,11 +74,18 @@ export default function Home() {
     }
     function handleClickPrev(e) {
         e.preventDefault()
-        setCurrentPage(currentPage - 1)
+        if (currentPage > 1) { // 
+            setCurrentPage(currentPage - 1) // restamos uno a la pagina actual
+        }
     }
     function handleClickNext(e) {
         e.preventDefault()
-        setCurrentPage(currentPage + 1)
+        if (currentPage < Math.ceil(allPokemons.length / pokemonsPerPage)) { // math.ceil me da la cantidad de paginas que necesito
+            setCurrentPage(currentPage + 1) // sumamos uno a la pagina actual
+        } else if (allPokemons === 0) {
+            setCurrentPage(1)
+        }
+
     }
 
     return (
@@ -155,19 +162,15 @@ export default function Home() {
 
                         }
                     </div>
-
-
-                    <button onClick={(e) => handleClickPrev(e)}>Prev</button>
                     <Paginado
 
                         pokemonsPerPage={pokemonsPerPage}
                         allPokemons={allPokemons.length}
-                        paginado={paginado} />
-                    <button onClick={(e) => handleClickNext(e)}>Next</button>
+                        paginado={paginado}
 
-
-
-
+                        prev={(e) => handleClickPrev(e)}
+                        next={(e) => handleClickNext(e)}
+                    />
                 </div>
 
             </div>

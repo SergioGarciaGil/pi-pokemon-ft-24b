@@ -13,7 +13,7 @@ export default function Paginado({ pokemonsPerPage, allPokemons, paginado, next,
             <nav>
 
                 <ul className={style.ul}>
-                    <button onClick={prev}>Prev</button>
+                    {/* <button onClick={prev}>Prev</button> */}
                     {pageNumbers &&
                         pageNumbers.map((number) => (
 
@@ -22,7 +22,7 @@ export default function Paginado({ pokemonsPerPage, allPokemons, paginado, next,
                             </li>
 
                         ))}
-                    <button onClick={next}> Next</button>
+                    {/* <button onClick={next}> Next</button> */}
                 </ul>
 
             </nav>

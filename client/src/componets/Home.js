@@ -168,8 +168,8 @@ export default function Home() {
                         allPokemons={allPokemons.length}
                         paginado={paginado}
 
-                        prev={(e) => handleClickPrev(e)}
-                        next={(e) => handleClickNext(e)}
+                    // prev={(e) => handleClickPrev(e)}
+                    // next={(e) => handleClickNext(e)}
                     />
                 </div>
 

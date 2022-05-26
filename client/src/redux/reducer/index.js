@@ -7,7 +7,8 @@ import {
     GET_TYPES,
     ORDER_BY_ATTACK,
     GET_DETAIL,
-    POST_POKEMON
+    POST_POKEMON,
+    RESET_DETAIL
 
 } from '../actions/types';
 
@@ -89,6 +90,9 @@ function rootReducer(state = initialState, action) {
                 ...state,
 
             }
+        case RESET_DETAIL: return {
+            ...state, detail: []
+        }
 
         default:
             return state;

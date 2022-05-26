@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getNamePokemon } from "../redux/actions";
+
 
 export default function SearchBar() {
     const dispatch = useDispatch();
@@ -17,10 +18,10 @@ export default function SearchBar() {
         dispatch(getNamePokemon(name));
     }
 
-
     return (
         <div>
             <input
+
                 type="text"
                 placeholder="Buscar"
                 value={name}

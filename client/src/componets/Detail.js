@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import style from './Detail.module.css'
-import { getDetail } from '../redux/actions'
+import { getDetail, reset_detail } from '../redux/actions'
 
 
 
@@ -17,7 +17,13 @@ export default function Detail(props) {
 
 
     useEffect(() => {
+        //Entrada
         dispatch(getDetail(id))
+
+        //Salida -> Desmonta el componente
+        return () => {
+            dispatch(reset_detail())
+        }
     }, [dispatch, id])
 
 

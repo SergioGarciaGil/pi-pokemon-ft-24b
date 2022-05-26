@@ -72,6 +72,15 @@ export default function Home() {
         setCurrentPage(1)
         setAttack(`ordenado ${e.target.value}`)
     }
+    function handleClickPrev(e) {
+        e.preventDefault()
+        setCurrentPage(currentPage - 1)
+    }
+    function handleClickNext(e) {
+        e.preventDefault()
+        setCurrentPage(currentPage + 1)
+    }
+
     return (
         <div>
             <div className={style.container}>
@@ -122,6 +131,9 @@ export default function Home() {
 
 
                     </div>
+                    <div >
+
+                    </div>
                     <div className={style.mainCard}>
                         {
                             currentPokemons.length > 0 ? currentPokemons.map(p => {
@@ -144,16 +156,22 @@ export default function Home() {
                         }
                     </div>
 
+
+                    <button onClick={(e) => handleClickPrev(e)}>Prev</button>
                     <Paginado
+
                         pokemonsPerPage={pokemonsPerPage}
                         allPokemons={allPokemons.length}
-                        paginado={paginado}
-                    />
+                        paginado={paginado} />
+                    <button onClick={(e) => handleClickNext(e)}>Next</button>
+
+
 
 
                 </div>
+
             </div>
-        </div>
+        </div >
 
 
     )

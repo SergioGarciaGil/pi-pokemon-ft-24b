@@ -8,26 +8,36 @@ import {
     FILTER_BY_TYPES,
     ORDER_BY_ATTACK,
     GET_DETAIL,
-
+    RESET_DETAIL
 } from './types';
 
 export function getPokemons() {
     return async (dispatch) => {
-        let pokemons = await axios.get("http://localhost:3001/pokemons")
-        return dispatch({
-            type: GET_POKEMONS,
-            payload: pokemons.data
-        })
+        try {
+            let pokemons = await axios.get("http://localhost:3001/pokemons")
+            return dispatch({
+                type: GET_POKEMONS,
+                payload: pokemons.data
+            })
+        } catch (err) {
+            console.log(err)
+        }
     }
 }
 
 export function getNamePokemon(name) {
     return async (dispatch) => {
-        let pokemon = await axios.get(`http://localhost:3001/pokemons?name=${name}`)
-        return dispatch({
-            type: GET_NAME_POKEMON,
-            payload: pokemon.data
-        })
+        try {
+            let pokemon = await axios.get(`http://localhost:3001/pokemons?name=${name}`)
+            return dispatch({
+                type: GET_NAME_POKEMON,
+                payload: pokemon.data
+            })
+
+        } catch (err) {
+            console.log(err)
+            alert("Pokemon not found")
+        }
     }
 }
 
@@ -88,4 +98,9 @@ export function postPokemon(payload) {
     }
 }
 
+export function reset_detail() {
+    return {
+        type: RESET_DETAIL
+    }
+}
 

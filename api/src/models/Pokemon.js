@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
     hp: {
       type: DataTypes.INTEGER,
     },
-    strength: {
+    attack: {
       type: DataTypes.INTEGER,
     },
     defense: {

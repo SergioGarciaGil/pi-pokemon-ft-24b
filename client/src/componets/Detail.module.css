@@ -2,26 +2,23 @@
     padding:10px;;
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     background-image: url("https://imagenes.diariodenavarra.es/files/bajacalidad/uploads/2020/07/28/60b0502f2c019.jpeg");
-    /* filter: brightness(50%);  */
-    /* background-size: cover; */
-    
     border:5px solid #0c0b0b;; 
     width: 95%;
     height: 600px;
 
+    width: 100%;
+    height: 600px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
+
 .img {
 filter: brightness(120%);
     position: relative;
     top: 10px;
     left: 320px; 
     pointer-events: none;
-    /* box-shadow: 0px 0px 10px rgb(0, 0, 0); */
-    /* background-color: rgba(255, 255, 255, 0.2); */
-    /* border-radius: 50px; */
-    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
